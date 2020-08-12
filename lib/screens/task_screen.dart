@@ -41,7 +41,7 @@ class _TaskScreenState extends State<TaskScreen> {
           size: 40,
         ),
       ),
-      backgroundColor: Colors.lightBlueAccent,
+//      backgroundColor: Colors.lightBlueAccent,
       body: Container(
         decoration: BoxDecoration(
             image: DecorationImage(
@@ -67,7 +67,7 @@ class _TaskScreenState extends State<TaskScreen> {
                           size: 30,
                           color: Color(0xddffffff),
                         ),
-                        foregroundColor: Colors.lightBlueAccent,
+ //                       foregroundColor: Colors.lightBlueAccent,
                         backgroundColor: Color(0x55ffffff),
                         radius: 30,
                       ),

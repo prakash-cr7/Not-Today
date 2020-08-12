@@ -1,11 +1,12 @@
 import 'package:flutter/foundation.dart';
 import 'task.dart';
+import 'package:intl/intl.dart';
 
 class TaskData extends ChangeNotifier{
   List<Task> tasks = [];
-
-  void addTask (String newTask) {
-    final task = Task(name: newTask);
+  var dateFormat = DateFormat.MMMd('en_us').add_jm();
+  void addTask (String newTask, String dateTime) {
+    final task = Task(name: newTask, dateTime: dateTime);
     tasks.add(task);
     notifyListeners();
   }
@@ -17,5 +18,9 @@ class TaskData extends ChangeNotifier{
    void deleteTask (int index) {
     tasks.remove(tasks[index]);
     notifyListeners();
+   }
+
+   String addDatetime() {
+    return dateFormat.format(DateTime.now());
    }
 }
