@@ -34,9 +34,3 @@ class TaskTile extends StatelessWidget {
         onLongPress: longPresscallback);
   }
 }
-
-//(newValue) {
-//setState(() {
-//currentState = newValue;
-//});
-//},

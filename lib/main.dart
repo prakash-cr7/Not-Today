@@ -5,13 +5,17 @@ import 'screens/task_screen.dart';
 
 void main() => runApp(MyApp());
 
+
 class MyApp extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (context) => TaskData(),
       child: MaterialApp(
-        theme: ThemeData.dark(),
+        theme: ThemeData.dark().copyWith(
+          accentColor: Colors.black45
+        ),
         home: TaskScreen(),
       ),
     );

@@ -10,15 +10,12 @@ class TaskScreen extends StatefulWidget {
 }
 
 class _TaskScreenState extends State<TaskScreen> {
-  int currentBackground = 4;
 
-  void changeBackground() {
-    if (currentBackground != 4)
-      ++currentBackground;
-    else
-      currentBackground = 0;
+  @override
+  void initState() {
+    Provider.of<TaskData>(context, listen: false).initSP();
+    super.initState();
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,7 +42,7 @@ class _TaskScreenState extends State<TaskScreen> {
       body: Container(
         decoration: BoxDecoration(
             image: DecorationImage(
-                image: AssetImage('images/game_of_thrones ($currentBackground).jpg'),
+                image: AssetImage('images/game_of_thrones (4).jpg'),
                 fit: BoxFit.fill)),
         child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -56,21 +53,15 @@ class _TaskScreenState extends State<TaskScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    GestureDetector(
-                      onTap: (){
-                        changeBackground();
-                        setState(() {});
-                      },
-                      child: CircleAvatar(
-                        child: Icon(
-                          Icons.list,
-                          size: 30,
-                          color: Color(0xddffffff),
-                        ),
- //                       foregroundColor: Colors.lightBlueAccent,
-                        backgroundColor: Color(0x55ffffff),
-                        radius: 30,
+                    CircleAvatar(
+                      child: Icon(
+                        Icons.list,
+                        size: 30,
+                        color: Color(0xddffffff),
                       ),
+ //                       foregroundColor: Colors.lightBlueAccent,
+                      backgroundColor: Color(0x55ffffff),
+                      radius: 30,
                     ),
                     SizedBox(
                       height: 10,
