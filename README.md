@@ -1,6 +1,7 @@
 # Not Today
 
 A GoT Themed Todo App
+
 Download the apk from release section.
 
 # Packages used:
