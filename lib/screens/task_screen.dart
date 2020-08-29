@@ -11,10 +11,17 @@ class TaskScreen extends StatefulWidget {
 
 class _TaskScreenState extends State<TaskScreen> {
 
+  Image myImage;
   @override
   void initState() {
-    Provider.of<TaskData>(context, listen: false).initSP();
     super.initState();
+    Provider.of<TaskData>(context, listen: false).initSP();
+    myImage= Image.asset('images/game_of_thrones (4).jpg');
+  }
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    precacheImage(myImage.image, context);
   }
   @override
   Widget build(BuildContext context) {

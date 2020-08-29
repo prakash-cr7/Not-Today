@@ -7,7 +7,7 @@ import 'dart:convert';
 class TaskData extends ChangeNotifier{
 
   List<Task> tasks = [];
-  var dateFormat = DateFormat.MMMd('en_us').add_jm();
+  var dateFormat = DateFormat.d('en_us').add_MMM().add_jm();
   SharedPreferences sharedPreferences;
 
   void initSP () async {
